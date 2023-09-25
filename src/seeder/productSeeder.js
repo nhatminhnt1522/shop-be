@@ -5,18 +5,36 @@ const mongoose = require("mongoose");
 const productSeeder = async () => {
 
     const products = [
-        // { name: 'Macbook 2016', type: 'Laptop', image: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6r8cpct3J3EtmhfImzz91t0bxAILqveaBdQ&usqp=CAU`, price: 6700000, countInStock: 514, rating: 42 },
-        // { name: 'Macbook Pro 2018', type: 'Laptop', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTechSt2Y5iGCJsi0oAxEnTgwXUCbHgKbP31dDhfCLm90OKKiTZyLe6comBbIpuL6H-0u4&usqp=CAU', price: 9500000, countInStock: 723, rating: 4.3 },
-        // { name: 'Macbook Air 2019', type: 'Laptop', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZPz1mxSPCxHWWD1GYnahBTX7FlhKsjDLkkQ&usqp=CAU', price: 12990000, countInStock: 898, rating: 4.5 },
-        // { name: 'Macbook M1 2020', type: 'Laptop', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBm81K3B36XHbk1invfkNomMwNzh2chf_GYA&usqp=CAU', price: 13590000, countInStock: 768, rating: 4.2 },
-        // { name: 'iPhone 15', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuSAHlMVh3q5108cXcCs_AeRcR8vEleLjvTQ&usqp=CAU', price: 28990000, countInStock: 0, rating: 0 }
-        // { name: 'iPhone 14', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSViDy5Lo-t-GdOb42NkiO4wOhs9-GypbM3Cw&usqp=CAU', price: 18800000, countInStock: 250, rating: 4.6 },
-        // { name: 'iPhone 13', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_HIIgv3b9E3TR_21kgFfw1xcwFUY04VLEaQ&usqp=CAU', price: 16990000, countInStock: 215, rating: 4.1 },
-        // { name: 'iPhone 12', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkLzPV5cqHJmLV-G_-5UxGsj5mBl3I6Q-qyA&usqp=CAU', price: 14690000, countInStock: 258, rating: 4.5 },
-        // { name: 'iPhone 11', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp1E_JE8GrunY-jAj4SxbgSPNjQbUnI2K684CrKqq6D1GpaUCoLneZbB9u9-lYlI99ca0&usqp=CAU', price: 8990000, countInStock: 164, rating: 4.8 },
-        // { name: 'iPhone 10', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ195UxJpDNlEnQije9hsGmkaOxjBF0x9i-dg&usqp=CAU', price: 5990000, countInStock: 0, rating: 0 },
-        // { name: 'iPhone 8', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQRsz8lpYdQAWbp5DahLGFdzzlVsZj4dhCw&usqp=CAU', price: 3990000, countInStock: 59, rating: 4.8 }
-        { name: 'iPhone 7', type: 'Phone', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJBbAZ8oC4elUDTsaqWzDApwLno4G4OvEQEg&usqp=CAU', price: 2590000, countInStock: 28, rating: 4.5 }
+        { name: 'MacBook Air M1 256GB 2020', type: 'Mac', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/i/air_m2.png`, price: 18990000, countInStock: 23, rating: 4.2 },
+        { name: 'Macbook Air M2 2022 8GB', type: 'Mac', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/m/a/macbook_air_m22.png`, price: 26690000, countInStock: 26, rating: 4.5 },
+        { name: 'Macbook Pro 13 M2 2022', type: 'Mac', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/p/r/pro-m2.jpg`, price: 29490000, countInStock: 28, rating: 4.6 },
+        { name: 'MacBook Pro 14 inch M2 Pro 2023', type: 'Mac', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/m/2/m2_pro_14.png`, price: 47990000, countInStock: 35, rating: 4.1 },
+        { name: 'Macbook Air M2 2022', type: 'Mac', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/i/air_m2_16gb.png`, price: 31990000, countInStock: 15, rating: 4.6 },
+        { name: 'Macbook Pro 14 M1 Pro', type: 'Mac', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/m/a/mac_pro.png`, price: 45590000, countInStock: 25, rating: 4.6 },
+        { name: 'iPhone 14 Pro Max 128GB', type: 'iPhone', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/_/t_m_18.png`, price: 25990000, countInStock: 21, rating: 4.1 },
+        { name: 'iPhone 13 128GB', type: 'iPhone', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/4/14_1_9_2_9.jpg`, price: 16190000, countInStock: 28, rating: 4.5 },
+        { name: 'iPhone 14 128GB', type: 'iPhone', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/iphone-14-storage-select-202209-6-1inch-y889.jpg`, price: 18790000, countInStock: 16, rating: 4.8 },
+        { name: 'iPhone 12 128GB', type: 'iPhone', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/2/_/2_241_2.jpg`, price: 14890000, countInStock: 10, rating: 4.6 },
+        { name: 'iPhone 11 128GB', type: 'iPhone', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/4/_/4_187_1.jpg`, price: 11990000, countInStock: 29, rating: 4.8 },
+        { name: 'iPhone 13 Pro Max 256GB', type: 'iPhone', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/_/1_66_6_2_1_12.jpg`, price: 26590000, countInStock: 28, rating: 4.5 },
+        { name: 'Airpods Pro 2022', type: 'Airpods', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_111_5_.png`, price: 5890000, countInStock: 23, rating: 4.3 },
+        { name: 'AirPods 2', type: 'Airpods', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_169_2.png`, price: 2630000, countInStock: 27, rating: 4.5 },
+        { name: 'AirPods 3 2022', type: 'Airpods', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_170_1_1.png`, price: 4250000, countInStock: 12, rating: 4.6 },
+        { name: 'AirPods 3 MagSafe', type: 'Airpods', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_170_9.png`, price: 4390000, countInStock: 8, rating: 4.8 },
+        { name: 'AirPods Pro 2021 Magsafe', type: 'Airpods', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/r/group_168_1__1.png`, price: 5090000, countInStock: 5, rating: 4.1 },
+        { name: 'EarPods Lightning', type: 'Airpods', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/f/r/frame_3_3.png`, price: 490000, countInStock: 16, rating: 4.4 },
+        { name: 'iPad 10.2 2021', type: 'iPad', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/x/_/x_mmas.png`, price: 7590000, countInStock: 36, rating: 4.1 },
+        { name: 'iPad Pro 11', type: 'iPad', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/ipad-pro-13-select-wifi-spacegray-202210-02.jpg`, price: 20290000, countInStock: 8, rating: 4.8 },
+        { name: 'iPad Air 5 10.9 inch', type: 'iPad', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/_/1_253_3.jpg`, price: 13690000, countInStock: 14, rating: 4.2 },
+        { name: 'iPad Gen 10 10.9 inch', type: 'iPad', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/ipad-2022-hero-silver-wifi-select.png`, price: 11290000, countInStock: 6, rating: 4.6 },
+        { name: 'iPad mini 6', type: 'iPad', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/3/_/3_229.jpg`, price: 11090000, countInStock: 26, rating: 4.5 },
+        { name: 'iPad Air 5 10.9 inch', type: 'iPad', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/_/1_253_8.jpg`, price: 20990000, countInStock: 18, rating: 4.5 },
+        { name: 'Apple Watch SE 2022', type: 'Watch', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/w/a/watch_se.png`, price: 5990000, countInStock: 23, rating: 4.6 },
+        { name: 'Apple Watch Series 8', type: 'Watch', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_gps_1_.png`, price: 9090000, countInStock: 14, rating: 4.3 },
+        { name: 'Apple Watch SE 2022', type: 'Watch', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/w/a/watch_se_44.png`, price: 6750000, countInStock: 28, rating: 4.5 },
+        { name: 'Apple Watch Series 8 viền nhôm', type: 'Watch', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_gps_2_.png`, price: 8990000, countInStock: 25, rating: 4.4 },
+        { name: 'Apple Watch Series 7', type: 'Watch', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_gps_7_.png`, price: 7690000, countInStock: 6, rating: 4.8 },
+        { name: 'Apple Watch SE', type: 'Watch', image: `https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/a/p/apple_lte_14_.png`, price: 7290000, countInStock: 4, rating: 4.5 }
     ]
 
     await mongoose.connect(`mongodb+srv://minhntn19010065:D9apYddeM55HI7BB@cluster0.gfw70j3.mongodb.net/?retryWrites=true&w=majority`);
